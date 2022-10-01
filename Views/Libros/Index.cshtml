@@ -46,13 +46,18 @@
                 @Html.DisplayFor(modelItem => item.fechaPublicacion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Portada)
+                @*Html.DisplayFor(modelItem => item.Portada)*@
+                @if (!string.IsNullOrEmpty(item.Portada))
+                {
+
+                <img src="~/portadas/@item.Portada" class="rounded-circle" style="max-width:50px" asp-append-version="true" />
+                }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Genero.ID)
+                @Html.DisplayFor(modelItem => item.Genero.Descripcion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Autor.ID)
+                @Html.DisplayFor(modelItem => item.Autor.Apellido)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

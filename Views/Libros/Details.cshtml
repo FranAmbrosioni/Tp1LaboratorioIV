@@ -31,20 +31,25 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Portada)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Portada)
+        <dd class="col-sm-10">
+            @*Html.DisplayFor(model => model.Portada)*@
+            @if (!string.IsNullOrEmpty(Model.Portada))
+            {
+
+                <img src="~/portadas/@Model.Portada" class="rounded-circle" style="max-width:50px" asp-append-version="true" />
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Genero)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Genero.ID)
+            @Html.DisplayFor(model => model.Genero.Descripcion)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Autor)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Autor.ID)
+            @Html.DisplayFor(model => model.Autor.Apellido)
         </dd>
     </dl>
 </div>
