@@ -108,9 +108,8 @@ namespace WebTp1LaboratorioIV.Controllers
             }
 
 
-
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Apellido", libros.AutorId);
-            ViewData["GeneroId"] = new SelectList(_context.Genero, "Id", "Descripcion", libros.GeneroId);
+            ViewData["AutorList"] = new SelectList(_context.Autor, "ID", "Apellido", libros.AutorId);
+            ViewData["GeneroList"] = new SelectList(_context.Genero, "ID", "Descripcion", libros.GeneroId);
             return View(libros);
         }
 
@@ -175,8 +174,8 @@ namespace WebTp1LaboratorioIV.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Apellido", libros.AutorId);
-            ViewData["GeneroId"] = new SelectList(_context.Genero, "Id", "Descripcion", libros.GeneroId);
+            ViewData["AutorList"] = new SelectList(_context.Autor, "ID", "Apellido", libros.AutorId);
+            ViewData["GeneroList"] = new SelectList(_context.Genero, "ID", "Descripcion", libros.GeneroId);
             return View(libros);
         }
 
